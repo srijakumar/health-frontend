@@ -1,14 +1,18 @@
 import React from 'react';
+//need connect to give access to the store from App
+import {connect} from 'react-redux'
+import {fetchTrackers} from './actions/fetchTrackers'
 
 
 
 class App extends React.Component {
 
-  // componentDidMount() {
-  //   fetch('http://localhost:3000/trackers/1')
-  //   .then(response => response.json())
-  //   .then(data => console.log(data))
-  // }
+  componentDidMount() {
+    this.props.fetchTrackers({type: 'FETCH_TRACKERS', payload: {name: 'Health'}})
+  }
+  // this.props.trackers
+  // this.props.fetchTrackers
+
 
   render(){
     return(
@@ -19,4 +23,16 @@ class App extends React.Component {
   }
 }
 
-export default App;
+// const mapStateToProps = (state) => {
+//   //way of accessing values in the store as props and need to pass it through the connect
+//   return {
+//     trackers: state.trackers
+//   }
+// }
+
+export default connect(null, {fetchTrackers})(App);
+
+//myStore.dispatch({type: 'FETCH_TRACKERS', payload: {name: 'Health'}})
+
+// //trying to see what's in the store. To add something to the store you add second argument - the action creator
+// export default connect(mapStateToProps)(App);

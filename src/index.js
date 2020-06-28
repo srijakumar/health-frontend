@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {createStore, applyMiddleware, compose} from 'redux' //asyc request and thunk too, provider wraps so access to
-import thunk from 'react-thunk'
+import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
+import trackerReducer from './reducers/trackerReducer'
 
 import App from './App';
 
@@ -11,11 +12,11 @@ import App from './App';
 //compose allows to pass multiple middleware
 //let reducer = '' //reducer tells us what we want to do with our store based on certain actions. reducer will return a new version of the store based on the action object provided
 
-conts composeEnhancers  = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancers  = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 //let enhancer = compose()
 
-let myStore = createStore(reducer, composeEnhancers(applyMiddleware(thunk)))
+let myStore = createStore(trackerReducer, composeEnhancers(applyMiddleware(thunk)))
 
 
 ReactDOM.render(
