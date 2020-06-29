@@ -1,13 +1,19 @@
 
-export function fetchTrackers(action) {
+export function fetchTrackers() {
 
-   return action
-  //
+   // return action
+  // we want a dispatch inside this
   // creates an action object
-  // fetch('http://localhost:3000/trackers/1')
-  // .then(response => response.json())
-  // .then(data => console.log(data)) //want to update the redux store instead of console.log
 
+  return (dispatch) => { //thunk allows this to be sent
+    fetch('http://localhost:3000/trackers')
+    .then(response => response.json())
+    .then(trackers => dispatch({ //dispatching to the reducer and reducer does based on the action
+      type: 'FETCH_TRACKERS',
+      paylod: trackers
+    })
+    ) //want to update the redux store instead of console.log
+  }
   //dispatch()
 
 }

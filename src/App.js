@@ -1,15 +1,16 @@
 import React from 'react';
 //need connect to give access to the store from App
 import {connect} from 'react-redux'
-import {fetchTrackers} from './actions/fetchTrackers'
+//import {fetchTrackers} from './actions/fetchTrackers'
+import TrackerContainer from './containers/TrackerContainer'
 
 
 
 class App extends React.Component {
 
-  componentDidMount() {
-    this.props.fetchTrackers({type: 'FETCH_TRACKERS', payload: {name: 'Health'}})
-  }
+  // componentDidMount() {
+  //   this.props.fetchTrackers({type: 'FETCH_TRACKERS', payload: {name: 'Health'}})
+  // }
   // this.props.trackers
   // this.props.fetchTrackers
 
@@ -17,7 +18,7 @@ class App extends React.Component {
   render(){
     return(
       <div className="App">
-        App
+        <TrackerContainer/>
       </div>
     )
   }
@@ -30,9 +31,12 @@ class App extends React.Component {
 //   }
 // }
 
-export default connect(null, {fetchTrackers})(App);
+// export default connect(null, {fetchTrackers})(App);
 
 //myStore.dispatch({type: 'FETCH_TRACKERS', payload: {name: 'Health'}})
 
 // //trying to see what's in the store. To add something to the store you add second argument - the action creator
 // export default connect(mapStateToProps)(App);
+
+
+export default connect()(App);
