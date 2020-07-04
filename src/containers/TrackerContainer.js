@@ -4,7 +4,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {fetchTrackers} from '../actions/fetchTrackers'
-
+import {Route} from 'react-router-dom'
+import Tracker from '../components/Tracker'
 import Trackers from '../components/Trackers'
 import TrackerInput from '../components/TrackerInput'
 
@@ -20,8 +21,9 @@ class TrackerContainer extends React.Component {
   render(){
     return(
       <div>
-        <TrackerInput/> <br/> <br/>
-        <Trackers trackers={this.props.trackers}/>
+        <Route path='/trackers/new' component={TrackerInput}/>
+        <Route path='/trackers/:id' render={(routerProps)=> <Tracker {...routerProps} trackers={this.props.trackers}/>} />
+        <Route exact path='/trackers' render={(routerProps)=> <Trackers {...routerProps} trackers={this.props.trackers}/>} />
       </div>
     )
   }
@@ -36,5 +38,6 @@ const mapStateToProps = state => {
   }
 }
 //state from redux store
+//route prop give access to params
 
 export default connect(mapStateToProps, {fetchTrackers})(TrackerContainer)

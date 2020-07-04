@@ -4,7 +4,7 @@ import {createStore, applyMiddleware, compose} from 'redux' //asyc request and t
 import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
 import trackerReducer from './reducers/trackerReducer'
-
+import {BrowserRouter as Router} from 'react-router-dom'
 import App from './App';
 
 //set up our store - store is where you are storing the data globally
@@ -21,6 +21,8 @@ let store = createStore(trackerReducer, composeEnhancers(applyMiddleware(thunk))
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <Router>
+      <App />
+    </Router>
   </Provider>,
   document.getElementById('root'));

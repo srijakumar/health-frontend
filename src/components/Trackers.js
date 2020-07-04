@@ -1,14 +1,14 @@
 import React from 'react'
+import Tracker from './Tracker'
 
 const Trackers = (props) => {
 console.log(props)
 
 
-  return (
+  return(
     <div>
       {props.trackers.map(tracker =>
-        <li key={tracker.id}>
-        {tracker.name} - {tracker.description}</li>)}
+        <div key={tracker.id}><Tracker tracker={tracker}/></div>)}
     </div>
   )
 

@@ -18,6 +18,10 @@ handleChange = (event) => {
 handleSubmit = (event) => {
   event.preventDefault()
   this.props.addTracker(this.state)
+  this.setState({
+    name: '',
+    description: ''
+  })
 }
 
   render(){
@@ -27,7 +31,7 @@ handleSubmit = (event) => {
       <label>Tracker Name</label>
         <input type ='text' placeholder='Enter tracker name' value={this.state.name} name="name" onChange={this.handleChange}/><br/>
         <label>Description</label>
-        <input type ='text' placeholder='Enter description'value={this.state.description} name="description" Change={this.handleChange}/><br/>
+        <input type ='text' placeholder='Enter description'value={this.state.description} name="description" onChange={this.handleChange}/><br/>
         <input type='submit'/>
 
       </form>

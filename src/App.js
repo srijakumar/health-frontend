@@ -39,4 +39,6 @@ class App extends React.Component {
 // export default connect(mapStateToProps)(App);
 
 
-export default connect()(App);
+// export default connect()(App);
+
+export default App;
