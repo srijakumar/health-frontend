@@ -1,0 +1,3 @@
+http://localhost:3001/trackers/new works
+http://localhost:3001/trackers/ doesnt work - TypeError: Cannot read property 'map' of undefined
+http://localhost:3001/tracker/1 nothing displayed

@@ -1,5 +1,6 @@
 import React from 'react'
 import Tracker from './Tracker'
+import {Route, Link} from 'react-router-dom'
 
 const Trackers = (props) => {
 console.log(props)
@@ -8,7 +9,9 @@ console.log(props)
   return(
     <div>
       {props.trackers.map(tracker =>
-        <div key={tracker.id}><Tracker tracker={tracker}/></div>)}
+        <li key={tracker.id}>
+          <Link to={'/trackers/${tracker.id}'}>{tracker.name}</Link>
+        </li>)}
     </div>
   )
 
