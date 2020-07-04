@@ -11,6 +11,7 @@ import TrackerInput from '../components/TrackerInput'
 class TrackerContainer extends React.Component {
 
   componentDidMount(){
+    //debugger
     this.props.fetchTrackers()
     //need the this.props to connect the fetch call to a redux store
   }
@@ -19,7 +20,7 @@ class TrackerContainer extends React.Component {
   render(){
     return(
       <div>
-        <TrackerInput/>
+        <TrackerInput/> <br/> <br/>
         <Trackers trackers={this.props.trackers}/>
       </div>
     )
@@ -27,7 +28,10 @@ class TrackerContainer extends React.Component {
 }
 
 const mapStateToProps = state => {
-  return{
+
+  console.log(state)
+
+  return {
     trackers: state.trackers
   }
 }

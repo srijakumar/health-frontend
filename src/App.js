@@ -8,14 +8,14 @@ import TrackerContainer from './containers/TrackerContainer'
 
 class App extends React.Component {
 
-  // componentDidMount() {
+  //componentDidMount() {
   //   this.props.fetchTrackers({type: 'FETCH_TRACKERS', payload: {name: 'Health'}})
   // }
-  // this.props.trackers
+   //this.props.trackers
   // this.props.fetchTrackers
+//}
 
-
-  render(){
+  render() {
     return(
       <div className="App">
         <TrackerContainer/>
