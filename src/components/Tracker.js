@@ -4,7 +4,7 @@
 
 import React from 'react'
 import {Redirect} from 'react-router-dom'
-
+import NoteContainer from '../container/NoteContainer'
 
 const Tracker = (props) => {
 
@@ -12,9 +12,12 @@ const Tracker = (props) => {
   //note if you delete it is possible some ids wont match
 
   return(
-    <h2>
-      {tracker ? tracker.name : null} - {tracker ? tracker.description : null}
-    </h2>
+    <div>
+      <h2>
+        {tracker ? tracker.name : null} - {tracker ? tracker.description : null}
+      </h2>
+      <NoteContainer tracker={tracker}/>
+    <div>
   )
 
 
