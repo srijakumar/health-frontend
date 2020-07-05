@@ -4,7 +4,9 @@ const Notes = (props) => {
 
   return (
     <div>
-      Notes
+      {props.notes && props.notes.map(note =>
+        <li key={note.id}>{note.content} - {note.date}</li>
+      )}
     </div>
   )
 
