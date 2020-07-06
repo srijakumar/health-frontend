@@ -8,16 +8,32 @@ export default function trackerReducer(state = {trackers: []}, action){
     case 'ADD_TRACKER':
       return {...state, trackers: [...state.trackers, action.payload]}
     case 'ADD_NOTE':
-    let trackers = state.trackers.map(tracker => {
-      if (tracker.id === action.paylod.id) {
-        return tracker.payload
-      } else {
-        return tracker
-      }
-    })
-
-    return {...state, trackers: trackers}
-
+      let trackers = state.trackers.map(tracker => {
+        if (tracker.id === action.paylod.id) {
+          return tracker.payload
+        } else {
+          return tracker
+        }
+      })
+      return {...state, trackers: trackers}
+    case 'DELETE_NOTE':
+      let trackersDel = state.trackers.map(tracker => {
+        if (tracker.id === action.paylod.id) {
+          return tracker.payload
+        } else {
+          return tracker
+        }
+      })
+      return {...state, trackers: trackersDel}
+    case 'EDIT_TRACKER'
+      let trackerEdit = state.trackers.map(tracker => {
+        if (tracker.id === action.paylod.id) {
+          return tracker.payload
+        } else {
+          return tracker
+        }
+      })
+      return {...state, trackers: trackerEdit}
     default:
       return state
   }

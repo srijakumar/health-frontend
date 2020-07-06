@@ -4,7 +4,8 @@
 
 import React from 'react'
 import {Redirect} from 'react-router-dom'
-import NoteContainer from '../container/NoteContainer'
+import NoteContainer from '../containers/NoteContainer'
+import TrackerEdit from './TrackerEdit'
 
 const Tracker = (props) => {
 
@@ -20,7 +21,8 @@ const Tracker = (props) => {
         {tracker ? tracker.name : null} - {tracker ? tracker.description : null}
       </h2>
       <NoteContainer tracker={tracker}/>
-    <div>
+      <TrackerEdit tracker={tracker}/>
+    </div>
   )
 
 
@@ -30,4 +32,3 @@ export default Tracker
 
 
   // This only works with links if you refresh your page you store resets and the props will be undefined the first time around
-  // {tracker ? null : <Redirect to='/trackers'/>}
