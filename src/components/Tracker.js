@@ -21,6 +21,8 @@ const Tracker = (props) => {
         {tracker ? tracker.name : null} - {tracker ? tracker.description : null}
       </h2>
       <NoteContainer tracker={tracker}/>
+      <br/>
+      <h4>Edit Tracker</h4>
       <TrackerEdit tracker={tracker}/>
     </div>
   )

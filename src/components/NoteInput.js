@@ -18,7 +18,9 @@ class NoteInput extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
+    debugger
     this.props.addNote(this.state, this.props.tracker.id)
+    //gave an error with tracker . id
     this.setState({
       date: '',
       content: ''
@@ -31,7 +33,7 @@ class NoteInput extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <label>Date:</label>
           <input type ="datetime-local" name="date" value={this.state.date} onChange={this.handleChange} placeholder='Date'/><br/>
-          <label>Conent:</label>
+          <label>Content:</label>
           <input type ="text" name="content" value={this.state.content} onChange={this.handleChange} placeholder='Note'/><br/>
           <input type="submit"/>
         </form>

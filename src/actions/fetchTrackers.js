@@ -10,7 +10,7 @@ export function fetchTrackers() {
     .then(response => response.json())
     .then(trackers => dispatch({
       type: 'FETCH_TRACKERS',
-      paylod: trackers
+      payload: trackers
     })
     )
   }

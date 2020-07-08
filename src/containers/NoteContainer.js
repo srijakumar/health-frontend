@@ -9,7 +9,7 @@ class NoteContainer extends React.Component {
   render(){
     return (
       <div>
-        <NoteInput tracker={this.props.tracker}/>
+        <NoteInput tracker={this.props.tracker}/> <br/>
         <Notes notes={this.props.tracker && this.props.tracker.notes}/>
       </div>
     )

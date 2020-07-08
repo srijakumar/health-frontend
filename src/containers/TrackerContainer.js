@@ -8,6 +8,7 @@ import {Route, Switch} from 'react-router-dom'
 import Tracker from '../components/Tracker'
 import Trackers from '../components/Trackers'
 import TrackerInput from '../components/TrackerInput'
+import NavBar from '../components/NavBar'
 
 class TrackerContainer extends React.Component {
 
@@ -21,6 +22,7 @@ class TrackerContainer extends React.Component {
   render(){
     return(
       <div>
+      <NavBar/>
         <Switch>
           <Route path='/trackers/new' component={TrackerInput}/>
           <Route path='/trackers/:id' render={(routerProps)=> <Tracker {...routerProps} trackers={this.props.trackers}/>} />

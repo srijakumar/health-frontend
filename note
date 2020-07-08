@@ -6,3 +6,11 @@ http://localhost:3001/tracker/1 nothing displayed
 in noteinput the date value
 
 props in trackers are not working
+
+need 2 more component
+
+
+
+7/7
+
+When you click and add a new tracker, the page should switch back to "tracker" to show the newly added tracker and not remain on the add tracker page

@@ -25,7 +25,7 @@ export default function trackerReducer(state = {trackers: []}, action){
         }
       })
       return {...state, trackers: trackersDel}
-    case 'EDIT_TRACKER'
+    case 'EDIT_TRACKER':
       let trackerEdit = state.trackers.map(tracker => {
         if (tracker.id === action.paylod.id) {
           return tracker.payload
