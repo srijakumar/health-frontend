@@ -14,3 +14,22 @@ need 2 more component
 7/7
 
 When you click and add a new tracker, the page should switch back to "tracker" to show the newly added tracker and not remain on the add tracker page
+
+Name of tracker still appears as you add notes
+
+  // Create an about page maybe - Welcome to HabitFormer & Tracker! With this app, determine the habit (or multiple) you want to track and document it along with date-timestamp to see your progression. Review your existing trackers or add a new one - let's get started!
+
+
+
+Q1 - Is there a route type system in React? idk if that is clear but after an action is completed, render a new page. For example, in my example, if you click and add a new tracker, it gets added, but we are still left on the form to create a new tracker page when it should go to the specific tracker page
+
+In my backend, I thought with the create controller method, that's what would happen
+
+def create
+  @tracker = Tracker.new(tracker_params)
+  if @tracker.save
+    render json: @tracker
+  else
+    render json: {error: "Error Saving"}
+  end
+end

@@ -22,14 +22,6 @@ let store = createStore(trackerReducer, composeEnhancers(applyMiddleware(thunk))
 ReactDOM.render(
   <Provider store={store}>
     <Router>
-      <h1>
-        HabitFormer & Tracker!
-      </h1>
-
-      <p>
-        Welcome to HabitFormer & Tracker! With this app, determine the habit (or multiple) you want to track and document it along with date-timestamp to see your progression. Review your existing trackers or add a new one - let's get started!
-      </p>
-
       <App />
     </Router>
   </Provider>,
