@@ -33,3 +33,38 @@ def create
     render json: {error: "Error Saving"}
   end
 end
+
+Q2 - When individual tracker page is being displayed, the tracker name should show up at the top
+
+Q3 - Edit tracker doesn't work (edit action issue with "Cannot read property 'id' of undefined")
+×
+TypeError: Cannot read property 'id' of undefined
+TrackerEdit.handleSubmit
+src/components/TrackerEdit.js:21
+  18 | handleSubmit = (event) => {
+  19 |   event.preventDefault()
+  20 |   //console.log(this.props)
+> 21 |   let tracker={...this.state, id: this.props.tracker.id}
+  22 |   this.props.editTracker(tracker)
+  23 |   this.setState({
+  24 |     name: '',
+
+
+this.props
+{tracker: undefined, trackers: {…}, editTracker: ƒ}
+this.state
+{name: "Srija Kumar", description: ""}
+
+so what I am typing is being entered but props.tracker is empty
+
+
+Q4 - Add note doesnt work either
+NoteInput.handleSubmit
+src/components/NoteInput.js:22
+  19 | handleSubmit = (event) => {
+  20 |   event.preventDefault()
+  21 |   debugger
+> 22 |   this.props.addNote(this.state, this.props.tracker.id)
+     | ^  23 |   //gave an error with tracker . id
+  24 |   this.setState({
+  25 |     date: '',
