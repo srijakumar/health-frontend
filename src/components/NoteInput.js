@@ -18,8 +18,8 @@ class NoteInput extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-     debugger
-    this.props.addNote(this.state, this.tracker.id)
+     //debugger
+    this.props.addNote(this.state, this.props.tracker.id)
     //gave an error with tracker . id
     this.setState({
       date: '',

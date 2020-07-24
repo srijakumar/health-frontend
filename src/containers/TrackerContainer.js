@@ -34,9 +34,6 @@ class TrackerContainer extends React.Component {
 }
 
 const mapStateToProps = state => {
-
-  console.log(state)
-
   return {
     trackers: state.trackers
   }

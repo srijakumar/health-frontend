@@ -1,15 +1,17 @@
 //import {FETCH_TRACKERS} from '../actions/fetchTrackers'
 
 export default function trackerReducer(state = {trackers: []}, action){
-//debugger
+
   switch (action.type) {
     case 'FETCH_TRACKERS':
       return {trackers: action.payload}
     case 'ADD_TRACKER':
+
       return {...state, trackers: [...state.trackers, action.payload]}
     case 'ADD_NOTE':
+      
       let trackers = state.trackers.map(tracker => {
-        if (tracker.id === action.paylod.id) {
+        if (tracker.id === action.payload.id) {
           return tracker.payload
         } else {
           return tracker
@@ -18,7 +20,7 @@ export default function trackerReducer(state = {trackers: []}, action){
       return {...state, trackers: trackers}
     case 'DELETE_NOTE':
       let trackersDel = state.trackers.map(tracker => {
-        if (tracker.id === action.paylod.id) {
+        if (tracker.id === action.payload.id) {
           return tracker.payload
         } else {
           return tracker
@@ -27,7 +29,7 @@ export default function trackerReducer(state = {trackers: []}, action){
       return {...state, trackers: trackersDel}
     case 'EDIT_TRACKER':
       let trackerEdit = state.trackers.map(tracker => {
-        if (tracker.id === action.paylod.id) {
+        if (tracker.id === action.payload.id) {
           return tracker.payload
         } else {
           return tracker

@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {deleteNote} from '../actions/deleteNote'
 
 const Notes = (props) => {
+  //debugger
 
   const handleDelete = (note) => {
     props.deleteNote(note.id, note.tracker_id)

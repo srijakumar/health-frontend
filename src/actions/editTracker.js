@@ -1,6 +1,8 @@
 export const editTracker = (data) => {
+  debugger
+  console.log(data)
   return (dispatch)=>{
-    fetch('http://localhost:3000/api/v1/trackers/${data.id}', {
+    fetch(`http://localhost:3000/api/v1/trackers/${data.id}`, {
       headers: {
         'content-Type': 'application/json',
         'Accept':'application/json'

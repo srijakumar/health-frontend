@@ -12,8 +12,14 @@ const Tracker = (props) => {
   //let tracker = props.trackers[props.match.params.id - 1]
   //note if you delete it is possible some ids wont match
   //this works too but if manually you go to id 3 it wont exist and you will need to manually put id 8
-  let tracker = props.trackers.filter(tracker => tracker.id == props.match.params.id)[0]
+  console.log('here')
+  console.log(props)
 
+  let tracker = props.trackers.filter(tracker => tracker.id == props.match.params.id)[0] || undefined;
+
+
+  console.log('now here')
+  console.log(tracker)
 
   return(
     <div>
@@ -22,7 +28,7 @@ const Tracker = (props) => {
       </h2>
       <NoteContainer tracker={tracker}/>
       <br/>
-      <h4>Edit Tracker</h4>
+      <h4>Edit Tracker Details</h4>
       <TrackerEdit tracker={tracker}/>
     </div>
   )

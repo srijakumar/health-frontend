@@ -10,7 +10,7 @@ console.log(props)
     <div>
       {props.trackers.map(tracker =>
         <li key={tracker.id}>
-          <Link to={'/trackers/${tracker.id}'}>{tracker.name}</Link>
+          <Link to={`/trackers/${tracker.id}`}>{tracker.name}</Link>
         </li>)}
     </div>
   )
