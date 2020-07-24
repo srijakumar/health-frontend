@@ -7,6 +7,7 @@ import {Redirect} from 'react-router-dom'
 import NoteContainer from '../containers/NoteContainer'
 import TrackerEdit from './TrackerEdit'
 
+
 const Tracker = (props) => {
 
   //let tracker = props.trackers[props.match.params.id - 1]
@@ -22,7 +23,7 @@ const Tracker = (props) => {
   console.log(tracker)
 
   return(
-    <div>
+    <div className="Tracker">
       <h2>
         {tracker ? tracker.name : null} - {tracker ? tracker.description : null}
       </h2>

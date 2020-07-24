@@ -6,6 +6,7 @@ import { Provider } from 'react-redux'
 import trackerReducer from './reducers/trackerReducer'
 import {BrowserRouter as Router} from 'react-router-dom'
 import App from './App';
+import './index.css';
 
 //set up our store - store is where you are storing the data globally
 //wrap the app in provider so the store is global

@@ -20,11 +20,6 @@ const Header = (props) => {
     <div>
       <Navbar>
         <Navbar.Brand href="/home">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS7WnAQX7bRDndO78exTvMR2GLDZuB4v6E1xg&usqp=CAU"
-               width="50"
-               height="50"
-               >
-            </img>
             <h1>HabitFormer & Tracker</h1>
         </Navbar.Brand>
         <Navbar.Text>Let's build better habits together</Navbar.Text>
@@ -38,3 +33,9 @@ const Header = (props) => {
 }
 
 export default Header
+
+// <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS7WnAQX7bRDndO78exTvMR2GLDZuB4v6E1xg&usqp=CAU"
+//
+//      className="App-logo"
+//      >
+//   </img>
