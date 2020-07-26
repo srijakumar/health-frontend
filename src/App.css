@@ -1,3 +1,180 @@
+.App {
+  padding: 0.5vmin;
+}
+
+header {
+  width: 1100px;
+  margin: auto;
+}
+
+.App-logo {
+  height: 10vmin;
+  margin: 1vmin;
+  margin-left: 0px;
+  vertical-align: middle;
+}
+
+img {
+  max-height: 35px;
+}
+
+.container {
+  width: 1100px;
+  margin: auto;
+  overflow: auto;
+}
+
+footer {
+  width: 1100px;
+  margin: auto;
+  position: relative;
+  margin-top: 2vmin;
+  border-top: 1px solid gainsboro;
+}
+
+footer .content {
+  color: #525252;
+  padding-top: 1vmin;
+  line-height: 35px;
+  width: 720px;
+  text-align: right;
+}
+
+footer .content img {
+  margin-top: 5px;
+  max-height: 25px;
+  float: left;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+footer .content a {
+  color: black;
+}
+
+.App-uploadImage {
+  text-align: center;
+  margin-bottom: 1vmin;
+  padding-bottom: 2vmin;
+  border-bottom: 1px solid gainsboro;
+}
+
+.App-collage {
+  float: left;
+}
+
+
+
+
+
+.app-side-bar {
+  float: right;
+  padding-left: 2vmin;
+  height: 120px;
+  width: 355px;
+  position: relative;
+}
+
+
+
+#loading {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  background-color: #8080808a;
+}
+
+
+/* INPUT TEXT DEFAULT CSS */
+::-webkit-input-placeholder {
+  color:#cccccc;
+  font-style: italic;
+}
+
+::-moz-placeholder {
+  color:#cccccc;
+  font-style: italic;
+}
+
+::-ms-placeholder {
+  color:#cccccc;
+  font-style: italic;
+}
+
+::placeholder {
+  color:#cccccc;
+  font-style: italic;
+}
+
+/* FOCUS */
+input:focus { outline: none; }
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; }
+input:focus::-moz-placeholder { color:transparent; }
+input:focus:-ms-input-placeholder { color:transparent; }
+
+
+.backgrounds h2 {
+  margin-top: 0px;
+}
+
+.backgrounds img {
+  cursor: pointer;
+  border: 3px solid transparent;
+}
+
+.backgrounds img:last-of-type {
+  width: 33px;
+  height: 33px;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  border: 2px solid #afafaf;
+  border-radius: 3px;
+  margin-bottom: 2px;
+}
+
+.backgrounds img.selected {
+  cursor: pointer;
+  border: 3px solid #37b573;
+  border-radius: 3px;
+}
+
+.backgrounds img:not(:last-child) {
+  margin-right: 5px;
+}
+
+
+.rectangle {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background: black;
+}
+
+.disclaimer{
+  font-style: italic;
+  font-size: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 
 .Tracker {
 
@@ -38,7 +215,7 @@ footer {
   font-style: italic;
   font-size: 10px;
 }
-
+ */
 
 .Button {
   width: 90px;
@@ -51,7 +228,7 @@ footer {
   cursor: pointer;
   margin-top: 2vmin;
 }
-
+/*
 .App-collage {
   float: left;
 
@@ -63,4 +240,4 @@ footer {
   height: 120px;
   width: 355px;
   position: relative;
-}
+} */

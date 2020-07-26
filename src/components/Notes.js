@@ -17,7 +17,7 @@ const Notes = (props) => {
   return (
     <div className="Notes">
       {props.notes && props.notes.map(note =>
-        <li key={note.id}>{note.content} - {note.date} <button className="Button" onClick={() => handleEdit(note)}>Edit</button><button className="Button" onClick={() => handleDelete(note)}>Delete</button></li>
+        <li key={note.id}>{note.content} - {note.date} <button className="Button" onClick={() => handleDelete(note)}>Delete</button></li>
       )}
     </div>
   )
@@ -25,3 +25,6 @@ const Notes = (props) => {
 }
 
 export default connect(null,{deleteNote, editNote})(Notes)
+
+// 
+// <button className="Button" onClick={() => handleEdit(note)}>Edit</button>

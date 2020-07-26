@@ -16,6 +16,8 @@ const Tracker = (props) => {
   console.log('here')
   console.log(props)
 
+  //debugger
+
   let tracker = props.trackers.filter(tracker => tracker.id == props.match.params.id)[0] || undefined;
 
 

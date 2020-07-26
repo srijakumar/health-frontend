@@ -1,13 +1,11 @@
 export const editTracker = (data) => {
-  debugger
-  console.log(data)
-  return (dispatch)=>{
+  return (dispatch) => {
     fetch(`http://localhost:3000/api/v1/trackers/${data.id}`, {
       headers: {
-        'content-Type': 'application/json',
-        'Accept':'application/json'
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
       },
-      action: 'PATCH',
+      method: 'PATCH',
       body: JSON.stringify(data)
     })
     .then(response => response.json())

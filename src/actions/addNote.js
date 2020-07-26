@@ -1,6 +1,7 @@
 
 export const addNote = (note, trackerId) => {
 
+
   return (dispatch) => {
     fetch(`http://localhost:3000/api/v1/trackers/${trackerId}/notes`, {
       method: 'POST',
@@ -12,6 +13,7 @@ export const addNote = (note, trackerId) => {
     .then(response => response.json())
     .then(tracker => {
           dispatch({type: 'ADD_NOTE', payload: tracker})
+        
       }
     )
   }

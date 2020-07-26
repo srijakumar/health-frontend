@@ -11,17 +11,22 @@ export default function trackerReducer(state = {trackers: []}, action){
     case 'ADD_NOTE':
 
       let trackers = state.trackers.map(tracker => {
+
         if (tracker.id === action.payload.id) {
-          return tracker.payload
-        } else {
+          return action.payload
+            } else {
           return tracker
-        }
+          }
+
       })
+
       return {...state, trackers: trackers}
+
+
     case 'DELETE_NOTE':
       let trackersDel = state.trackers.map(tracker => {
         if (tracker.id === action.payload.id) {
-          return tracker.payload
+          return action.payload
         } else {
           return tracker
         }
@@ -31,7 +36,7 @@ export default function trackerReducer(state = {trackers: []}, action){
       case 'EDIT_NOTE':
         let trackersEdit = state.trackers.map(tracker => {
           if (tracker.id === action.payload.id) {
-            return tracker.payload
+            return action.payload
           } else {
             return tracker
           }
@@ -40,15 +45,15 @@ export default function trackerReducer(state = {trackers: []}, action){
 
 
 
-    case 'EDIT_TRACKER':
-      let trackerEdit = state.trackers.map(tracker => {
-        if (tracker.id === action.payload.id) {
-          return tracker.payload
-        } else {
-          return tracker
-        }
-      })
-      return {...state, trackers: trackerEdit}
+        case 'EDIT_TRACKER':
+          let trackerE = state.trackers.map(tracker => {
+            if (tracker.id === action.payload.id) {
+              return action.payload
+            } else {
+              return tracker
+            }
+          })
+          return {...state, trackers: trackerE}
     default:
       return state
   }

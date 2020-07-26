@@ -32,7 +32,7 @@ class NoteInput extends React.Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <label>Date:</label>
-          <input type ="datetime" name="date" value={this.state.date} onChange={this.handleChange} placeholder='Date'/><br/>
+          <input type ="datetime" name="date" value={this.state.date} onChange={this.handleChange} placeholder='yyyy-mm-dd'/><br/>
           <label>Content:</label>
           <input type ="text" name="content" value={this.state.content} onChange={this.handleChange} placeholder='Note'/><br/>
           <input type="submit"/>
