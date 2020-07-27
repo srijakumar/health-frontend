@@ -26,9 +26,7 @@ class App extends React.Component {
             <article className="App-collage">
               <TrackerContainer/>
             </article>
-            <div className="app-side-bar1">
-              See your progress
-            </div>
+
           </div>
           <footer>
             <p>Created by Srija</p>

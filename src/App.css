@@ -61,21 +61,21 @@ footer .content a {
 
 .App-collage {
   float: center;
-  border: dashed;
-  border-color: grey;
-  height: 300pt
+
 }
 
-
+.Calendar {
+  height: '500pt'
+}
 
 
 
 .app-side-bar {
   float: right;
   padding-left: 2vmin;
-  height: 120px;
+  height: 300px;
   width: 355px;
-  position: relative;
+  position: top;
 }
 
 
