@@ -7,7 +7,7 @@ console.log(props)
 
 
   return(
-    <div>
+    <div className="collage">
       {props.trackers.map(tracker =>
         <li key={tracker.id}>
           <Link to={`/trackers/${tracker.id}`}>{tracker.name}</Link>

@@ -60,7 +60,10 @@ footer .content a {
 }
 
 .App-collage {
-  float: left;
+  float: center;
+  border: dashed;
+  border-color: grey;
+  height: 300pt
 }
 
 
