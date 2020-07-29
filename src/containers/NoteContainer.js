@@ -8,17 +8,36 @@ import 'react-big-calendar/lib/css/react-big-calendar.css';
 
 const localizer = momentLocalizer(moment);
 
-
 class NoteContainer extends React.Component {
 
   constructor() {
       super();
       const now = new Date();
+
+      this.state = {
+        calendar_notes: []
+      }
     }
 
+    eventsFunc = (props) => {
+      let events = this.props.tracker.notes
+        for (let i = 0; i < events.length; i++) {
+            events[i].content = "X"
+            events[i].date = moment.utc(events[i].date).toDate();
+            events["start"] = events[i].date
+            events["end"] = events[i].date
+          }
+        this.setState({
+          calendar_notes: events
+        })
+    }
+
+//I set the start and end date as the this.props.tracker.notes.date because i am not allowing my app to end an end date
 
   render(){
-    // debugger
+
+    const { calendar_notes } = this.state
+
     return (
 
       <div>
@@ -26,11 +45,9 @@ class NoteContainer extends React.Component {
         <Notes notes={this.props.tracker && this.props.tracker.notes}/>
         <div className = "app-side-bar">
           <Calendar
-            events={this.props.tracker.notes}
-            startAccessor="start"
-            endAccessor="end"
-            defaultDate={moment().toDate()}
-            localizer={localizer}
+            events={calendar_notes}
+            defaultView='month'
+            defaultDate={new Date()}
           />
         </div>
       </div>
@@ -41,39 +58,3 @@ class NoteContainer extends React.Component {
 }
 
 export default NoteContainer
-
-
-//  const events = []
-  // this.state = {
-  //   name: 'React',
-  //   events: this.props.tracker.notes
-  // };
-  // console.log("testing for events")
-  // console.log(events)
-  // events={this.state.events}
-// [
-//
-//   {
-//       id: 0,
-//       title: 'X',
-//       allDay: true,
-//       start: new Date(2020, 7, 4),
-//       end: new Date(2020, 7, 4),
-//   },
-//
-//   {
-//       id: 1,
-//       title: 'X',
-//       start: new Date(2020, 7, 3, 9, 0, 0),
-//       end: new Date(2020, 7, 3, 10, 0, 0),
-//   },
-//
-//   {
-//       id: 2,
-//       title: 'X',
-//       start: new Date(2020, 7, 1),
-//       end: new Date(2020, 7, 2),
-//       desc: 'Test',
-//   }
-//
-// ]
