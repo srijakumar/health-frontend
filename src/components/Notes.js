@@ -4,7 +4,6 @@ import {deleteNote} from '../actions/deleteNote'
 import {editNote} from '../actions/editNote'
 
 const Notes = (props) => {
-  //debugger
 
   const handleDelete = (note) => {
     props.deleteNote(note.id, note.tracker_id)
@@ -26,5 +25,5 @@ const Notes = (props) => {
 
 export default connect(null,{deleteNote, editNote})(Notes)
 
-// 
+//
 // <button className="Button" onClick={() => handleEdit(note)}>Edit</button>

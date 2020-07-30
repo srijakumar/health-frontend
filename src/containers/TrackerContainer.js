@@ -12,16 +12,11 @@ import Navbar from '../components/Navbar'
 
 
 class TrackerContainer extends React.Component {
-
-
-
-
     componentDidMount(){
       //debugger
       this.props.fetchTrackers()
       //need the this.props to connect the fetch call to a redux store
     }
-
 
   render(){
     return(
@@ -33,7 +28,7 @@ class TrackerContainer extends React.Component {
           <Route exact path='/trackers' render={(routerProps)=> <Trackers {...routerProps} trackers={this.props.trackers}/>} />
         </Switch>
 
-      
+
 
       </div>
     )

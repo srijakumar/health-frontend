@@ -5,6 +5,7 @@ import { Calendar, momentLocalizer, Views } from 'react-big-calendar';
 import moment from 'moment';
 import './style.css';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
+import {fetchTrackers} from '../actions/fetchTrackers'
 
 const localizer = momentLocalizer(moment);
 
@@ -32,7 +33,9 @@ class NoteContainer extends React.Component {
     //   }
 
     componentDidMount() {
+
        let notesArray = []
+
       // loop through the notes and add to array
             this.props.tracker.notes.map(noteEditted => {
 
