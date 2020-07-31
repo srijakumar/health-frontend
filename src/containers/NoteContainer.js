@@ -18,20 +18,6 @@ class NoteContainer extends React.Component {
       }
     }
 
-    // this works but not the first time but after refresh and also X is one day behind
-    // componentDidMount() {
-    //     this.props.tracker.notes.map(noteEditted => {
-    //       this.setState({
-    //         calendar_notes: [...this.state.calendar_notes,
-    //         {
-    //             title: "X",
-    //             start: new Date(noteEditted.date),
-    //             end: new Date(noteEditted.date)
-    //         }]
-    //       })
-    //     })
-    //   }
-
     componentDidMount() {
 
        let notesArray = []
@@ -83,12 +69,3 @@ class NoteContainer extends React.Component {
 }
 
 export default NoteContainer
-
-
-// <Calendar
-//   Localizer ={localizer}
-//   events={calendar_notes}
-//   startAccessor='start'
-//   endAccessor='end'
-//   defaultDate={moment().toDate()}
-// />

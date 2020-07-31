@@ -1,10 +1,8 @@
 import React from 'react'
-//need to connect to the store so when we dispatch it updates the store
 import {connect} from 'react-redux'
 import {addNote} from '../actions/addNote'
 
 class NoteInput extends React.Component {
-
   state = {
     date: '',
     content: ''
@@ -18,9 +16,7 @@ class NoteInput extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-     //debugger
     this.props.addNote(this.state, this.props.tracker.id)
-    //gave an error with tracker . id
     this.setState({
       date: '',
       content: ''
