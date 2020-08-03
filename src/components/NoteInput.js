@@ -16,6 +16,7 @@ class NoteInput extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
+    
     this.props.addNote(this.state, this.props.tracker.id)
     this.setState({
       date: '',
