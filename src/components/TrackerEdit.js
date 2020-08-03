@@ -19,7 +19,7 @@ handleSubmit = (event) => {
   event.preventDefault()
   //console.log(this.props)
   debugger
-  
+
   let tracker = {...this.state, id: this.props.tracker.id}
   this.props.editTracker(tracker)
   this.setState({
