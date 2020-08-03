@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import {deleteNote} from '../actions/deleteNote'
+import {updateCal} from '../actions/updateCal'
 //import {editNote} from '../actions/editNote'
 
 
@@ -28,7 +29,7 @@ const Notes = (props) => {
 
 }
 
-export default connect(null,{deleteNote})(Notes)
+export default connect(null,{deleteNote, updateCal})(Notes)
 // export default connect(null,{deleteNote, editNote})(Notes)
 
 //

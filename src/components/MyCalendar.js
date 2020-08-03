@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import { Calendar, momentLocalizer, Views } from 'react-big-calendar';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
-import {deleteNote} from '../actions/deleteNote'
+import {updateCal} from '../actions/updateCal'
 
 const localizer = momentLocalizer(moment);
 
@@ -40,7 +40,7 @@ class BigCalendar extends React.Component {
              </div>
            )}}
 
-export default connect(null,{deleteNote})(BigCalendar)
+export default connect(null,{updateCal})(BigCalendar)
 
 
 //This one works but doesnt update

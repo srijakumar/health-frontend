@@ -3,6 +3,7 @@ import NoteInput from '../components/NoteInput'
 import Notes from '../components/Notes'
 import BigCalendar from '../components/MyCalendar'
 import {fetchTrackers} from '../actions/fetchTrackers'
+import {updateCal} from '../actions/updateCal'
 
 class NoteContainer extends React.Component {
   render() {
