@@ -2,18 +2,6 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import Navbar from 'react-bootstrap/Navbar'
 
-// const NavBar = (props) => {
-//
-//   return (
-//     <div>
-//       <Link to='/trackers' style={{paddingRight: '10px'}}>Trackers  </Link>
-//       <Link to='/trackers/new'> Add a new tracker</Link>
-//     </div>
-//
-//   )
-// }
-//
-// export default NavBar
 
 const Header = (props) => {
   return(

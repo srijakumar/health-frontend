@@ -23,13 +23,10 @@ class TrackerContainer extends React.Component {
       <div className = "App-collage">
       <Navbar/>
         <Switch>
-          <Route path='/trackers/new' component={TrackerInput}/>
+          <Route path='/trackers/new' component={TrackerInput}/>          
           <Route path='/trackers/:id' render={(routerProps)=> <Tracker {...routerProps} trackers={this.props.trackers}/>} />
           <Route exact path='/trackers' render={(routerProps)=> <Trackers {...routerProps} trackers={this.props.trackers}/>} />
         </Switch>
-
-
-
       </div>
     )
   }

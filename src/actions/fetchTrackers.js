@@ -14,7 +14,6 @@ export function fetchTrackers() {
     })
     )
   }
-
 }
 
 //dispatch(actionObject)
