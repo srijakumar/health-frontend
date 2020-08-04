@@ -40,7 +40,9 @@ const Notes = (props) => {
       {props.notes && props.notes.map(note =>
         <li key={note.id}>{note.content} - {note.date} <button className="Button" onClick={() => handleDelete(note)}>Delete</button></li>
       )}
-      <div style={{height: '500px'}}>
+      <br/>
+
+      <div className="app-side-bar">
         <Calendar
           selectable
           localizer={localizer}
