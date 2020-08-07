@@ -42,8 +42,3 @@ handleSubmit = (event) => {
 
 
 export default connect(null, {addTracker})(TrackerInput)
-
-//addTracker in place of mapDispatchToProps
-//doesnt need access to mapstatetoprops which tells you what is already there
-//value needs to be added to make the form a controlled form
-//[event.target.name] brackets understands its a key of the object

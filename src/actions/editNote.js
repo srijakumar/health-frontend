@@ -1,6 +1,4 @@
 export const editNote = (noteId, trackerId) => {
-
-
   return dispatch => {
     return fetch(`http://localhost:3000/api/v1/trackers/${trackerId}/notes/${noteId}`, {
       method: 'PATCH'
@@ -9,5 +7,3 @@ export const editNote = (noteId, trackerId) => {
     .then(tracker => dispatch({type: 'EDIT_NOTE', payload: tracker}))
   }
 }
-
-//async so needs dispatch

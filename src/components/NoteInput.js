@@ -16,7 +16,7 @@ class NoteInput extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    
+
     this.props.addNote(this.state, this.props.tracker.id)
     this.setState({
       date: '',
@@ -40,5 +40,3 @@ class NoteInput extends React.Component {
 }
 
 export default connect(null, {addNote})(NoteInput)
-
-//name in form to match the key in the state

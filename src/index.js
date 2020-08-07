@@ -8,14 +8,8 @@ import {BrowserRouter as Router} from 'react-router-dom'
 import App from './App';
 import './index.css';
 
-//set up our store - store is where you are storing the data globally
-//wrap the app in provider so the store is global
-//compose allows to pass multiple middleware
-//let reducer = '' //reducer tells us what we want to do with our store based on certain actions. reducer will return a new version of the store based on the action object provided
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-//const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__() || compose
-//let enhancer = compose()
 
 let store = createStore(trackerReducer, composeEnhancers(applyMiddleware(thunk)))
 

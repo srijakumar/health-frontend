@@ -1,18 +1,20 @@
 import React from 'react'
 import NoteInput from '../components/NoteInput'
 import Notes from '../components/Notes'
+import { get } from "lodash";
 
 import {fetchTrackers} from '../actions/fetchTrackers'
-import {updateCal} from '../actions/updateCal'
 
 class NoteContainer extends React.Component {
   render() {
+    const { tracker} = this.props;
+    const notes = get(tracker, ["notes"], []);
+
     return (
       <div>
-        <NoteInput tracker={this.props.tracker}/> <br/>
-        <Notes notes={this.props.tracker && this.props.tracker.notes}/>
+        <NoteInput tracker={tracker}/> <br/>
+        <Notes notes={notes}/>
         <br/>
-
       </div>
     )
   }

@@ -3,9 +3,6 @@ import Tracker from './Tracker'
 import {Route, Link} from 'react-router-dom'
 
 const Trackers = (props) => {
-console.log(props)
-
-
   return(
     <div className="collage">
       {props.trackers.map(tracker =>
@@ -14,10 +11,6 @@ console.log(props)
         </li>)}
     </div>
   )
-
-
 }
 
 export default Trackers
-
-//need props - thats the information being passed from container to child components

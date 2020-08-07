@@ -1,21 +1,21 @@
-//container should render other components, pass them data and can also have other functions inside them
-
-
+// NODE MODULES
 import React from 'react'
 import {connect} from 'react-redux'
-import {fetchTrackers} from '../actions/fetchTrackers'
 import {Route, Switch} from 'react-router-dom'
+
+// INTERNAL MODULES
 import Tracker from '../components/Tracker'
 import Trackers from '../components/Trackers'
 import TrackerInput from '../components/TrackerInput'
+import {fetchTrackers} from '../actions/fetchTrackers'
 import Navbar from '../components/Navbar'
 
+// EXTERNAL MODULES
+import {Header} from '../components/Navbar'
 
 class TrackerContainer extends React.Component {
     componentDidMount(){
-      //debugger
       this.props.fetchTrackers()
-      //need the this.props to connect the fetch call to a redux store
     }
 
   render(){
@@ -23,8 +23,9 @@ class TrackerContainer extends React.Component {
       <div className = "App-collage">
       <Navbar/>
         <Switch>
-          <Route path='/trackers/new' component={TrackerInput}/>          
+          <Route path='/trackers/new' component={TrackerInput}/>
           <Route path='/trackers/:id' render={(routerProps)=> <Tracker {...routerProps} trackers={this.props.trackers}/>} />
+          <br></br>
           <Route exact path='/trackers' render={(routerProps)=> <Trackers {...routerProps} trackers={this.props.trackers}/>} />
         </Switch>
       </div>
@@ -37,9 +38,8 @@ const mapStateToProps = state => {
     trackers: state.trackers
   }
 }
-//state from redux store
-//route prop give access to params
-//switch returns the first path match, exact returns all
-// <div style={{ height: '500pt'}}>
 
-export default connect(mapStateToProps, {fetchTrackers})(TrackerContainer)
+export default connect(
+  mapStateToProps,
+  {fetchTrackers})
+(TrackerContainer)
