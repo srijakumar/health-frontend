@@ -10,6 +10,7 @@ import TrackerInput from '../components/TrackerInput'
 import {fetchTrackers} from '../actions/fetchTrackers'
 import Navbar from '../components/Navbar'
 
+
 // EXTERNAL MODULES
 import {Header} from '../components/Navbar'
 
@@ -28,6 +29,8 @@ class TrackerContainer extends React.Component {
           <br></br>
           <Route exact path='/trackers' render={(routerProps)=> <Trackers {...routerProps} trackers={this.props.trackers}/>} />
         </Switch>
+        <br></br>
+        
       </div>
     )
   }
