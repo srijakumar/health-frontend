@@ -1,9 +1,13 @@
+// NODE MODULES
 import React from 'react'
+
+// INTERNAL MODULES
 import NoteInput from '../components/NoteInput'
 import Notes from '../components/Notes'
-import { get } from "lodash";
-
 import {fetchTrackers} from '../actions/fetchTrackers'
+
+// EXTERNAL MODULES
+import { get } from "lodash";
 
 class NoteContainer extends React.Component {
   render() {
@@ -16,10 +20,6 @@ class NoteContainer extends React.Component {
         <Notes notes={notes}/>
         <br/>
       </div>
-    )
-  }
-
-
-}
+    )}}
 
 export default NoteContainer

@@ -1,7 +1,11 @@
+// NODE MODULES
 import React from 'react'
 import {connect} from 'react-redux'
+
+// INTERNAL MODULES
 import {deleteNote} from '../actions/deleteNote'
 
+// EXTERNAL MODULES
 import { Calendar, momentLocalizer, Views } from 'react-big-calendar';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
@@ -48,9 +52,6 @@ const Notes = (props) => {
          />
       </div>
     </div>
-
-  )
-
-}
+  )}
 
 export default connect(null,{deleteNote})(Notes)

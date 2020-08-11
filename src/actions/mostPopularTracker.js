@@ -1,27 +1,21 @@
-export const mostPopularTracker = (data) => {
-  return (dispatch) => {
-    fetch(`http://localhost:3000/api/v1/trackers/${data.id}/most_notes`, {
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      method: 'GET',
-      body: JSON.stringify(data)
+export const mostPopularTracker = (trackerId) => {
+  return dispatch => {
+    return fetch(`http://localhost:3000/api/v1/trackers/${trackerId}/most_notes`, {
+      method: 'GET'
     })
     .then(response => response.json())
     .then(tracker => dispatch({type: 'POPULAR_TRACKER', payload: tracker}))
   }
-
 }
 
 
-// export function fetchTrackers() {
+// export function mostPopularTracker(trackerId) {
 //   return (dispatch) => {
-//     fetch('http://localhost:3000/api/v1/trackers')
+//     fetch(`http://localhost:3000/api/v1/trackers/${trackerId}/most_notes`)
 //     .then(response => response.json())
-//     .then(trackers => dispatch({
-//       type: 'FETCH_TRACKERS',
-//       payload: trackers
+//     .then(tracker => dispatch({
+//       type: 'POPULAR_TRACKER',
+//       payload: tracker
 //     })
 //     )
 //   }

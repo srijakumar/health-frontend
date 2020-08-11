@@ -1,5 +1,8 @@
+// NODE MODULES
 import React from 'react'
 import {connect} from 'react-redux'
+
+// INTERNAL MODULES
 import {addNote} from '../actions/addNote'
 
 class NoteInput extends React.Component {

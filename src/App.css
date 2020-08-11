@@ -1,4 +1,12 @@
-.App {
+.app-side-bar {
+  float: right;
+  padding-left: 2vmin;
+  height: 300px;
+  width: 355px;
+  position: top;
+}
+
+/* .App {
   padding: 0.5vmin;
 }
 
@@ -70,13 +78,7 @@ footer .content a {
 
 
 
-.app-side-bar {
-  float: right;
-  padding-left: 2vmin;
-  height: 300px;
-  width: 355px;
-  position: top;
-}
+
 
 
 
@@ -92,7 +94,7 @@ footer .content a {
 
 
 /* INPUT TEXT DEFAULT CSS */
-::-webkit-input-placeholder {
+/* ::-webkit-input-placeholder {
   color:#cccccc;
   font-style: italic;
 }
@@ -113,7 +115,7 @@ footer .content a {
 }
 
 /* FOCUS */
-input:focus { outline: none; }
+/* input:focus { outline: none; }
 input:focus::-webkit-input-placeholder { color:transparent; }
 input:focus:-moz-placeholder { color:transparent; }
 input:focus::-moz-placeholder { color:transparent; }
@@ -162,7 +164,7 @@ input:focus:-ms-input-placeholder { color:transparent; }
   font-style: italic;
   font-size: 10px;
 }
-
+ */
 
 
 
@@ -220,7 +222,7 @@ footer {
 }
  */
 
-.Button {
+/* .Button {
   width: 90px;
   background: #37b573;
   color: white;
@@ -230,7 +232,7 @@ footer {
   border: none;
   cursor: pointer;
   margin-top: 2vmin;
-}
+} */
 /*
 .App-collage {
   float: left;

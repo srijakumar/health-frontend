@@ -9,9 +9,6 @@ import Trackers from '../components/Trackers'
 import TrackerInput from '../components/TrackerInput'
 import {fetchTrackers} from '../actions/fetchTrackers'
 import Navbar from '../components/Navbar'
-
-
-// EXTERNAL MODULES
 import {Header} from '../components/Navbar'
 
 class TrackerContainer extends React.Component {
@@ -27,10 +24,10 @@ class TrackerContainer extends React.Component {
           <Route path='/trackers/new' component={TrackerInput}/>
           <Route path='/trackers/:id' render={(routerProps)=> <Tracker {...routerProps} trackers={this.props.trackers}/>} />
           <br></br>
-          <Route exact path='/trackers' render={(routerProps)=> <Trackers {...routerProps} trackers={this.props.trackers}/>} />
+          <Route path='/trackers/' render={(routerProps)=> <Trackers {...routerProps} trackers={this.props.trackers}/>} />
         </Switch>
         <br></br>
-        
+
       </div>
     )
   }
@@ -42,7 +39,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(
-  mapStateToProps,
-  {fetchTrackers})
-(TrackerContainer)
+export default connect(mapStateToProps,{fetchTrackers})(TrackerContainer)

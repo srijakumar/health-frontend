@@ -1,4 +1,4 @@
-export default function trackerReducer(state = {trackers: []}, action){
+export default function trackerReducer(state = {trackers: [], most_pop: []}, action){
 
   switch (action.type) {
 
@@ -46,6 +46,10 @@ export default function trackerReducer(state = {trackers: []}, action){
           return tracker
         }})
       return {...state, trackers: trackerE}
+
+    case 'POPULAR_TRACKER':
+      console.log("Payload",action.payload.name)
+      return {most_pop: action.payload}
 
     default:
       return state

@@ -1,28 +1,30 @@
+// NODE MODULES
 import React from 'react'
 import {connect} from 'react-redux'
+
+// INTERNAL MODULES
 import {addTracker} from '../actions/addTracker'
 
 class TrackerInput extends React.Component {
+    state = {
+      name: '',
+      description: ''
+    }
 
-state = {
-  name: '',
-  description: ''
-}
+    handleChange = (event) => {
+      this.setState({
+        [event.target.name]: event.target.value
+      })
+    }
 
-handleChange = (event) => {
-  this.setState({
-    [event.target.name]: event.target.value
-  })
-}
-
-handleSubmit = (event) => {
-  event.preventDefault()
-  this.props.addTracker(this.state)
-  this.setState({
-    name: '',
-    description: ''
-  })
-}
+    handleSubmit = (event) => {
+      event.preventDefault()
+      this.props.addTracker(this.state)
+      this.setState({
+        name: '',
+        description: ''
+      })
+    }
 
   render(){
     return(
@@ -36,9 +38,7 @@ handleSubmit = (event) => {
 
       </form>
     </div>
-  )
-  }
-}
+  )}}
 
 
 export default connect(null, {addTracker})(TrackerInput)
