@@ -4,7 +4,7 @@ import Tracker from './Tracker'
 import {Route, Link} from 'react-router-dom'
 
 const Trackers = (props) => {
-    console.log("We are now in Trackers.js", this.props.trackers)
+    console.log("We are now in Trackers.js", props.trackers)
     return(
       <div className="collage">
         {props.trackers.map(tracker =>

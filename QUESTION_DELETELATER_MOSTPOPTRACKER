@@ -1,0 +1,164 @@
+I do have another question that follows that one - and I think its a react/JS issue but it maybe have something to do with redux too I am not sure but if it is redux, you can ignore it.
+The issue comes when I click on the "See your most successful tracker button"
+
+The button is in component "mostPopularTracker.js" and the parent component is "Tracker.js"
+
+So when I click the button, I get an error related to the parent component - "Tracker.js"
+×
+TypeError: Cannot read property 'filter' of undefined
+Tracker
+src/components/Tracker.js:15
+  12 |
+  13 | const Tracker = (props) => {
+  14 |   //debugger
+> 15 |  let tracker = props.trackers.filter(tracker => tracker.id == props.match.params.id)[0] || [] ;
+  16 |   console.log("we are in trcker.js", tracker)
+  17 |
+  18 |   return(
+
+  I tried to fix the error by assigning a default null value (seen above) but it didnt work either so that's why I think this is the root cause of the issue. But maybe I am wrong but I will attempt to kinda explain why not..?
+
+
+This is my tracker.js
+
+// NODE MODULES
+import React from 'react'
+import {Redirect} from 'react-router-dom'
+
+// INTERNAL MODULES
+import NoteContainer from '../containers/NoteContainer'
+import TrackerEdit from './TrackerEdit'
+import PopularTracker from '../components/mostPopularTracker'
+
+// EXTERNAL MODULES
+import { get } from "lodash";
+
+const Tracker = (props) => {
+  //debugger
+  //this is the error
+ let tracker = props.trackers.filter(tracker => tracker.id == props.match.params.id)[0] || [] ;
+  console.log("we are in trcker.js", tracker)
+
+  return(
+    <div>
+      <div className="ui blue segment" style={ {marginTop: '25px', marginLeft: '15px', marginRight: '15px'} }>
+        <center><h2>
+          {tracker ? tracker.name : null} - {tracker ? tracker.description : null}
+        </h2></center>
+      </div>
+
+
+      <center><NoteContainer tracker={tracker}/></center>
+      <br/>
+      <center><PopularTracker tracker={tracker}/></center>
+        //Popular Tracker Display Here
+      <br/>
+      <center><h4>Edit Tracker Details</h4>
+      <TrackerEdit tracker={tracker}/></center>
+      </div>
+  )}
+
+export default Tracker
+
+Child component -PopularTracker.js
+
+// NODE MODULES
+import React from 'react'
+import { connect } from 'react-redux';
+
+// INTERNAL MODULES
+import {mostPopularTracker} from '../actions/mostPopularTracker'
+
+
+const PopularTracker = ({ mostPopularTracker, tracker }) => {
+  const popularTracker = () => {
+    const bestTracker = mostPopularTracker(tracker)
+    return bestTracker
+    console.log("This is the bestTracker", bestTracker)
+
+  }
+  return(
+    <div className="Tracker">
+      <button className="Button" onClick={popularTracker}> See Your Most Successful Tracker </button>
+    </div>
+  )
+}
+export default connect(null,{mostPopularTracker})(PopularTracker)
+
+Now this does go into redux thing because the action method - mostPopularTracker is used, but I feel like that is not the issue because of console.log checking the results - explained below
+
+This is my action - mostPopularTracker.js
+
+export const mostPopularTracker = (trackerId) => {
+  return dispatch => {
+    return fetch(`http://localhost:3000/api/v1/trackers/${trackerId}/most_notes`, {
+      method: 'GET'
+    })
+    .then(response => response.json())
+    .then(tracker => dispatch({type: 'POPULAR_TRACKER', payload: tracker}))
+  }
+}
+
+which goes to the reducer - look at the very end I did a console.log to see if I get the right value which I do (doesnt matter whichever tracker I am not, this will return me tracker name - "To DO" which has the most notes) - so this is lengthy but just wanted to show why I think the issue is with the js above and not redux
+
+export default function trackerReducer(state = {trackers: [], most_pop: []}, action){
+  switch (action.type) {
+    case 'FETCH_TRACKERS':
+      return {trackers: action.payload}
+      console.log("FETCH_TRACKERS_REDUCER",action.payload)
+
+    case 'UPDATE_CAL':
+      return {...state, trackers: [...state.trackers, action.payload]}
+
+    case 'ADD_TRACKER':
+      return {...state, trackers: [...state.trackers, action.payload]}
+
+    case 'ADD_NOTE':
+      let trackers = state.trackers.map(tracker => {
+        if (tracker.id === action.payload.id) {
+          return action.payload
+            } else {
+          return tracker
+          }})
+      return {...state, trackers: trackers}
+
+    case 'DELETE_NOTE':
+      let trackersDel = state.trackers.map(tracker => {
+        if (tracker.id === action.payload.id) {
+          return action.payload
+        } else {
+          return tracker
+        }})
+      return {...state, trackers: trackersDel}
+
+    case 'EDIT_NOTE':
+      let trackersEdit = state.trackers.map(tracker => {
+        if (tracker.id === action.payload.id) {
+          return action.payload
+        } else {
+          return tracker
+        }})
+      return {...state, trackers: trackersEdit}
+
+    case 'EDIT_TRACKER':
+      let trackerE = state.trackers.map(tracker => {
+        if (tracker.id === action.payload.id) {
+          return action.payload
+        } else {
+          return tracker
+        }})
+      return {...state, trackers: trackerE}
+
+    case 'POPULAR_TRACKER':
+      console.log("This is the Payload name for the most popular tracker",action.payload.name)
+      return {most_pop: action.payload}
+
+    default:
+      return state
+  }
+}
+
+
+
+I have included a video here that has that walkthrough
+https://drive.google.com/file/d/1BWKLJ63_AJMQHg2sMD7wPDLXtspaL5Rk/view

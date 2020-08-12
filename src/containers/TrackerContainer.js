@@ -25,9 +25,7 @@ class TrackerContainer extends React.Component {
       <Navbar/>
       <Switch>
         <Route path='/trackers/new' component={TrackerInput}/>
-        <Route exact path='/trackers'
-        render={(routerProps)=>
-          <Trackers {...routerProps} trackers={this.props.trackers}/>} />
+        <Route exact path='/trackers'render={(routerProps)=><Trackers {...routerProps} trackers={this.props.trackers}/>} />
         <Route path='/trackers/:id' render={(routerProps)=> <Tracker {...routerProps} trackers={this.props.trackers}/>} />
         <br></br>
       </Switch>

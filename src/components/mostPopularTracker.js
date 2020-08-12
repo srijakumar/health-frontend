@@ -10,6 +10,8 @@ const PopularTracker = ({ mostPopularTracker, tracker }) => {
   const popularTracker = () => {
     const bestTracker = mostPopularTracker(tracker)
     return bestTracker
+    console.log("This is the bestTracker", bestTracker)
+
   }
   return(
     <div className="Tracker">

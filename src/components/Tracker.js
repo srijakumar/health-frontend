@@ -11,9 +11,10 @@ import PopularTracker from '../components/mostPopularTracker'
 import { get } from "lodash";
 
 const Tracker = (props) => {
+  console.log("This is props in TRACKER.js", props)
   //debugger
- let tracker = props.trackers.filter(tracker => tracker.id == props.match.params.id)[0] || undefined ;
-  console.log("we are in trcker.js", tracker)
+ let tracker = props.trackers.filter(tracker => tracker.id == props.match.params.id)[0] || [] ;
+  console.log("THIS IS TRACKER AFTER FILTER", tracker)
 
   return(
     <div>
