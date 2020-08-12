@@ -164,3 +164,16 @@ const mapStateToProps = state => {
 
 export default connect(mapStateToProps,{deleteNote})(Notes)
 // export default connect(null,{deleteNote, editNote})(Notes)
+
+
+
+
+
+<Route path='/trackers' render={(routerProps)=> <Trackers {...routerProps} trackers={this.props.trackers}/>} />
+
+
+This is from about.js
+<center><strong><p>Let's build better habits together!</p></strong></center>
+<div className="ui blue segment" style={ {marginTop: '25px', marginLeft: '15px', marginRight: '15px'} }>
+<center><Link to="/about">About</Link> | <Link to="/trackers">All Trackers</Link> | <Link to="/trackers/new">New Tracker</Link></center>
+</div>

@@ -11,22 +11,27 @@ import PopularTracker from '../components/mostPopularTracker'
 import { get } from "lodash";
 
 const Tracker = (props) => {
-  let tracker = props.trackers.filter(tracker => tracker.id == props.match.params.id)[0] || undefined ;
+  //debugger
+ let tracker = props.trackers.filter(tracker => tracker.id == props.match.params.id)[0] || undefined ;
   console.log("we are in trcker.js", tracker)
 
   return(
-    <div className="Tracker">
-      <h2>
-        {tracker ? tracker.name : null} - {tracker ? tracker.description : null}
-      </h2>
-        <NoteContainer tracker={tracker}/>
+    <div>
+      <div className="ui blue segment" style={ {marginTop: '25px', marginLeft: '15px', marginRight: '15px'} }>
+        <center><h2>
+          {tracker ? tracker.name : null} - {tracker ? tracker.description : null}
+        </h2></center>
+      </div>
+
+
+      <center><NoteContainer tracker={tracker}/></center>
       <br/>
-      <PopularTracker tracker={tracker}/>
+      <center><PopularTracker tracker={tracker}/></center>
         //Popular Tracker Display Here
       <br/>
-      <h4>Edit Tracker Details</h4>
-        <TrackerEdit tracker={tracker}/>
-    </div>
+      <center><h4>Edit Tracker Details</h4>
+      <TrackerEdit tracker={tracker}/></center>
+      </div>
   )}
 
 export default Tracker

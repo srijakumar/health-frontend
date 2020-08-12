@@ -43,7 +43,7 @@ const Notes = (props) => {
       })}
       <br/>
 
-      <div className="app-side-bar">
+      <div style={{height: '500px'}}>
         <Calendar
           selectable
           localizer={localizer}

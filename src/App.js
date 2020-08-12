@@ -10,10 +10,7 @@ class App extends React.Component {
   render() {
     return(
       <div className="App">
-        <header>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS7WnAQX7bRDndO78exTvMR2GLDZuB4v6E1xg&usqp=CAU"
-               className="App-logo" alt="logo" />
-          </header>
+
           <div className="container">
             <article className="App-collage">
               <TrackerContainer/>

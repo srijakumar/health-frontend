@@ -14,29 +14,50 @@ import {Header} from '../components/Navbar'
 class TrackerContainer extends React.Component {
     componentDidMount(){
       this.props.fetchTrackers()
+      console.log(
+        "this is component did mount in tracker container",
+         this.props.fetchTrackers())
     }
 
   render(){
     return(
-      <div className = "App-collage">
+      <div className="ui raised very padded text container segment">
       <Navbar/>
-        <Switch>
-          <Route path='/trackers/new' component={TrackerInput}/>
-          <Route path='/trackers/:id' render={(routerProps)=> <Tracker {...routerProps} trackers={this.props.trackers}/>} />
-          <br></br>
-          <Route path='/trackers/' render={(routerProps)=> <Trackers {...routerProps} trackers={this.props.trackers}/>} />
-        </Switch>
+      <Switch>
+        <Route path='/trackers/new' component={TrackerInput}/>
+        <Route exact path='/trackers'
+        render={(routerProps)=>
+          <Trackers {...routerProps} trackers={this.props.trackers}/>} />
+        <Route path='/trackers/:id' render={(routerProps)=> <Tracker {...routerProps} trackers={this.props.trackers}/>} />
         <br></br>
-
+      </Switch>
+        <br></br>
+        <br></br>
+        <br></br>
       </div>
     )
   }
 }
 
 const mapStateToProps = state => {
+    console.log("this is inside of mPTS", state)
   return {
-    trackers: state.trackers
+    ...state
+    // trackers: state.trackers
+  }
+
+}
+
+
+const mapDispatchToProps = (dispatch) => {
+    console.log("this is inside of map dispatch to props", dispatch)
+  return {
+    fetchTrackers: () => dispatch(fetchTrackers())
   }
 }
 
-export default connect(mapStateToProps,{fetchTrackers})(TrackerContainer)
+
+export default connect(mapStateToProps,mapDispatchToProps)(TrackerContainer)
+
+//
+// this.props.state.trackers

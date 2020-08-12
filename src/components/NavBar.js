@@ -10,6 +10,7 @@ import AboutPage from './AboutPage'
 const Header = (props) => {
   return(
     <div>
+    <center>
       <Navbar>
         <Navbar.Brand href="/home">
             <h1>HabitFormer & Tracker</h1>
@@ -17,12 +18,12 @@ const Header = (props) => {
         <Navbar.Text>Let's build better habits together</Navbar.Text>
         <br></br>
         <br></br>
-        <Link to="/about" exact component={AboutPage}> About</Link>
-        <Link to='/trackers' style={{paddingRight: '10px'}}>Trackers  </Link>
-        <Link to='/trackers/new'> Add a new tracker</Link>
-
+        <Link to='/about'exact component={AboutPage}>About</Link>
+        <Link to='/trackers' style={{paddingRight: '10px'}}>All Trackers</Link>
+        <Link to='/trackers/new'> New Tracker</Link>
         <br></br>
       </Navbar>
+    </center>
     </div>
   )
 }

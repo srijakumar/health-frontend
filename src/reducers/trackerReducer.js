@@ -4,6 +4,7 @@ export default function trackerReducer(state = {trackers: [], most_pop: []}, act
 
     case 'FETCH_TRACKERS':
       return {trackers: action.payload}
+      console.log("FETCH_TRACKERS_REDUCER",action.payload)
 
     case 'UPDATE_CAL':
       return {...state, trackers: [...state.trackers, action.payload]}
