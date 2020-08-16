@@ -27,10 +27,12 @@ const Tracker = (props) => {
 
       <center><NoteContainer tracker={tracker}/></center>
       <br/>
-      <center><PopularTracker tracker={tracker}/></center>
-      <br/>
       <center><h4>Edit Tracker Details</h4>
       <TrackerEdit tracker={tracker}/></center>
+      <br/>
+      <br/>
+      <center><PopularTracker tracker={tracker}/></center>
+      <br/>
       </div>
   )}
 

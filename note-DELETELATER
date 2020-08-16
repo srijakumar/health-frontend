@@ -177,3 +177,59 @@ This is from about.js
 <div className="ui blue segment" style={ {marginTop: '25px', marginLeft: '15px', marginRight: '15px'} }>
 <center><Link to="/about">About</Link> | <Link to="/trackers">All Trackers</Link> | <Link to="/trackers/new">New Tracker</Link></center>
 </div>
+
+
+
+
+
+
+
+
+
+// This works to show the payload name
+// const PopularTracker = ({ mostPopularTracker, tracker }) => {
+//   const popularTracker = () => {
+//     const showBestTracker = mostPopularTracker(tracker)
+//     return showBestTracker
+//     console.log("This is the bestTracker", showBestTracker)
+//
+//   }
+//   return(
+//     <div className="Tracker">
+//       <button className="Button" onClick={popularTracker}> See Your Most Successful Tracker </button>
+//     </div>
+//   )
+// }
+//
+// export default connect(null,{mostPopularTracker})(PopularTracker)
+
+
+
+
+
+//
+// class Show extends React.Component {
+//
+// let x = props && props.most_pop;
+// return x
+//
+//   render(){
+//     return(
+//       <div> Hi
+//
+//       </div>
+//     )
+//   }
+//
+// }
+
+
+
+
+
+
+//
+// if/else
+//
+// if props.state.most_pop
+//   <p>{props.state.most_pop}</>
