@@ -1,6 +1,6 @@
-export const mostPopularTracker = (trackerId) => {
-  return dispatch => {
-    return fetch(`http://localhost:3000/api/v1/trackers/${trackerId}/most_notes`, {
+export const mostPopularTracker = (tracker) => {
+    return dispatch => {
+    return fetch(`http://localhost:3000/api/v1/trackers/${tracker.id}/most_notes`, {
       method: 'GET'
     })
     .then(response => response.json())

@@ -8,8 +8,7 @@ import Tracker from '../components/Tracker'
 import Trackers from '../components/Trackers'
 import TrackerInput from '../components/TrackerInput'
 import {fetchTrackers} from '../actions/fetchTrackers'
-import Navbar from '../components/Navbar'
-import {Header} from '../components/Navbar'
+import Header from '../components/Header'
 
 class TrackerContainer extends React.Component {
     componentDidMount(){
@@ -22,7 +21,7 @@ class TrackerContainer extends React.Component {
   render(){
     return(
       <div className="ui raised very padded text container segment">
-      <Navbar/>
+      <Header />
       <Switch>
         <Route path='/trackers/new' component={TrackerInput}/>
         <Route exact path='/trackers'render={(routerProps)=><Trackers {...routerProps} trackers={this.props.trackers}/>} />

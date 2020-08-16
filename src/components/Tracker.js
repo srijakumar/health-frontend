@@ -13,7 +13,7 @@ import { get } from "lodash";
 const Tracker = (props) => {
   console.log("This is props in TRACKER.js", props)
   //debugger
- let tracker = props.trackers.filter(tracker => tracker.id == props.match.params.id)[0] || [] ;
+ let tracker = props && props.trackers && props.trackers.filter(tracker => tracker.id == props.match.params.id)[0] || [] ;
   console.log("THIS IS TRACKER AFTER FILTER", tracker)
 
   return(
@@ -28,7 +28,6 @@ const Tracker = (props) => {
       <center><NoteContainer tracker={tracker}/></center>
       <br/>
       <center><PopularTracker tracker={tracker}/></center>
-        //Popular Tracker Display Here
       <br/>
       <center><h4>Edit Tracker Details</h4>
       <TrackerEdit tracker={tracker}/></center>

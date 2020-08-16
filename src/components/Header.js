@@ -1,11 +1,10 @@
 // NODE MODULES
 import React from 'react'
 import {Link} from 'react-router-dom'
-import Navbar from 'react-bootstrap/Navbar'
+import { Navbar } from 'react-bootstrap'
 
 // INTERNAL MODULES
 import AboutPage from './AboutPage'
-
 
 const Header = (props) => {
   return(

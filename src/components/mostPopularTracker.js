@@ -5,40 +5,42 @@ import { connect } from 'react-redux';
 // INTERNAL MODULES
 import {mostPopularTracker} from '../actions/mostPopularTracker'
 
+const PopularTracker = (props) => {
 
-const PopularTracker = ({ mostPopularTracker, tracker }) => {
-  const popularTracker = () => {
-    const bestTracker = mostPopularTracker(tracker)
-    return bestTracker
-    console.log("This is the bestTracker", bestTracker)
-
+  const displayFnc = () => {
+    console.log("1", props)
+    const showBestTracker = mostPopularTracker(props.tracker)
+    console.log("2", showBestTracker)
   }
+
+
+  console.log("PROPS IN POP TRACKER", props)
   return(
-    <div className="Tracker">
-      <button className="Button" onClick={popularTracker}> See Your Most Successful Tracker </button>
+    <div>
+      <p>This is the most popularTracker</p>
+      <button className="Button" onClick={displayFnc}> See Your Most Successful Tracker </button>
     </div>
   )
 }
+
 export default connect(null,{mostPopularTracker})(PopularTracker)
 
 
 
-// const popularTracker = (x) => {
-//   const bestTracker = mostPopularTracker(x.tracker)
-//   console.log("HI TEST", x.tracker)
-//   return bestTracker
-//   console.log("BEST TRACKER", bestTracker.name)
-// }
+
+// This works to show the payload name
+// const PopularTracker = ({ mostPopularTracker, tracker }) => {
+//   const popularTracker = () => {
+//     const showBestTracker = mostPopularTracker(tracker)
+//     return showBestTracker
+//     console.log("This is the bestTracker", showBestTracker)
 //
-// const PopularTracker = (props) => {
-//   console.log("props in popular tracker", props)
-//
+//   }
 //   return(
 //     <div className="Tracker">
-//       <button className="Button" onClick={popularTracker(props)}> See Your Most Successful Tracker </button>
+//       <button className="Button" onClick={popularTracker}> See Your Most Successful Tracker </button>
 //     </div>
 //   )
 // }
-//
 //
 // export default connect(null,{mostPopularTracker})(PopularTracker)

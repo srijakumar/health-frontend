@@ -50,7 +50,7 @@ export default function trackerReducer(state = {trackers: [], most_pop: []}, act
 
     case 'POPULAR_TRACKER':
       console.log("This is the Payload name for the most popular tracker",action.payload.name)
-      return {most_pop: action.payload}
+      return {...state, most_pop: action.payload}
 
     default:
       return state
