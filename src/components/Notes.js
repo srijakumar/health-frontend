@@ -43,6 +43,9 @@ const Notes = (props) => {
         </li>
       })}
       <br/>
+      <br/>
+      <h3>Monthly Tracking Summary</h3>
+      <br/>
 
       <div style={{height: '500px'}}>
         <Calendar
