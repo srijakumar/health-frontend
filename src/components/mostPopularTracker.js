@@ -15,15 +15,6 @@ const mapStateToProps = state => {
 
 const PopularTracker = (props) => {
 
-  // const displayFnc = () => {
-  //   console.log("1", props)
-  //   //let showBestTracker = {}
-  //   let showBestTracker = props.mostPopularTracker(props.tracker)
-  //   console.log("2", props.most_pop)
-  //   return showBestTracker
-  // }
-
-
   const displayPrm = () => {
     let showBestTracker = props.mostPopularTracker(props.tracker)
   }

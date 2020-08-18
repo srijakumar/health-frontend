@@ -9,6 +9,7 @@ import {deleteNote} from '../actions/deleteNote'
 import { Calendar, momentLocalizer, Views } from 'react-big-calendar';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
+import 'moment/locale/en-gb';
 
 const localizer = momentLocalizer(moment);
 
@@ -46,6 +47,7 @@ const Notes = (props) => {
       <div style={{height: '500px'}}>
         <Calendar
           selectable
+          views={['month']}
           localizer={localizer}
           events={updateEvents(props.notes)}
           defaultDate={moment().toDate()}
@@ -55,3 +57,7 @@ const Notes = (props) => {
   )}
 
 export default connect(null,{deleteNote})(Notes)
+
+
+//
+// localizer={localizer}
